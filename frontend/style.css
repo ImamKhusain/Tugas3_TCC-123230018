@@ -1,0 +1,375 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #777777;
+  --dark: #2a2a36;
+  --accent: #14d7d0;
+  --accent-2: #2ab6f6;
+  --card: #ffffff;
+  --shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  --soft-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  --line: #f1c232;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: var(--text);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* TOP BAR */
+.topbar {
+  height: 58px;
+  background: var(--dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  border-bottom: 3px solid #f3b01e;
+}
+
+.topbar__title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.topbar__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 210px;
+  background: #f3f3f3;
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: #777;
+}
+
+.topbar__search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 13px;
+  color: #333;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #666;
+}
+
+/* PAGE */
+.page {
+  width: 100%;
+}
+
+/* COMPOSER */
+.composer {
+  width: 100%;
+  max-width: 980px;
+  margin: 34px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.composer__title {
+  width: 55%;
+  min-width: 300px;
+  max-width: 520px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #111;
+  background: linear-gradient(90deg, #12e1d2, #11d4c7);
+  padding: 11px 18px;
+  border-radius: 4px;
+  box-shadow: var(--soft-shadow);
+  margin-bottom: 22px;
+}
+
+.note-form {
+  width: 55%;
+  min-width: 300px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: var(--soft-shadow);
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #222;
+}
+
+.input-field {
+  height: 34px;
+}
+
+.textarea-field {
+  min-height: 185px;
+  resize: none;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: #c7c7c7;
+}
+
+.btn-save {
+  width: 52%;
+  min-width: 170px;
+  max-width: 240px;
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  background: linear-gradient(90deg, #16e2d0, #20aef7);
+  cursor: pointer;
+  box-shadow: var(--soft-shadow);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-save:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* DIVIDER */
+.divider {
+  width: 100%;
+  height: 44px;
+  margin: 44px 0 0;
+  background: var(--dark);
+}
+
+/* NOTES SECTION */
+.notes-section {
+  width: 100%;
+  padding: 24px 50px 60px;
+  background: #fff;
+}
+
+.notes-section__header {
+  max-width: 1150px;
+  margin: 0 auto 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notes-section__header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  display: inline-block;
+}
+
+.section-line {
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #f1c232;
+  margin-top: 8px;
+}
+
+.notes-grid {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 34px 42px;
+}
+
+/* NOTE CARD */
+.note-card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 16px 16px 12px;
+  min-height: 150px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
+}
+
+.note-card__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.note-card__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2f2f2f;
+  word-break: break-word;
+  min-height: 60px;
+}
+
+.note-card__meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+.note-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.note-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #e6e6e6;
+  color: #222;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.note-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.note-btn--edit {
+  background: #d9d9d9;
+}
+
+.note-btn--delete {
+  background: #cfcfcf;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 36px 20px;
+  color: #777;
+  font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .topbar__title {
+    font-size: 14px;
+  }
+
+  .topbar__search {
+    width: 150px;
+  }
+
+  .composer__title,
+  .note-form {
+    width: 100%;
+  }
+
+  .notes-section {
+    padding: 24px 18px 50px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .divider {
+    margin-top: 36px;
+  }
+}
+
+/* ===== TITLE MY NOTES ===== */
+.notes-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notes-title h2 {
+  margin: 0;
+  font-weight: 800;
+}
+
+.section-line {
+  width: 80px;
+  height: 3px;
+  background: orange;
+  border-radius: 2px;
+}
+
+/* ===== BUTTON ===== */
+.note-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* EDIT HIJAU */
+.note-btn--edit {
+  background: #2ecc71;
+  color: white;
+}
+
+.note-btn--edit:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+/* HAPUS MERAH */
+.note-btn--delete {
+  background: #e74c3c;
+  color: white;
+}
+
+.note-btn--delete:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
