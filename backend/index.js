@@ -7,7 +7,7 @@ require("dotenv").config();
 
 const app = express();
 
-// 🔥 FIX CORS (INI YANG PENTING)
+// FIX CORS (INI YANG PENTING)
 app.use(cors());
 
 // middleware
