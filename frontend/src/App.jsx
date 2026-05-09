@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./index.css";
 
-const API_URL = "https://tugas3-tcc-123230018-764024000152.us-central1.run.app";
+const API_URL =
+  "https://tugas3-tcc-123230018-764024000152.us-central1.run.app/api/v1/notes";
 
 function App() {
   const [judul, setJudul] = useState("");
